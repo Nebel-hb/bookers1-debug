@@ -10,9 +10,10 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <p><%= flash[:notice] %></p>
+    <% flash.each do |message_type, message| %>
+      <%= message %>
     <% end %>
     <%= yield %>
+    
   </body>
 </html>
